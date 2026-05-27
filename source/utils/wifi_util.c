@@ -4068,7 +4068,7 @@ bool is_vap_param_config_changed(wifi_vap_info_t *vap_info_old, wifi_vap_info_t 
 // Countrycode: US, Band 2.4G
 static const wifi_operating_classes_t us_24G[] = {
     { 81, -30, 2, { 12, 13 } },
-    { 83, -30, 0, {}         },
+    { 83, -30, 2, { 8, 9 } },
     { 84, -30, 2, { 12, 13 } },
 };
 
@@ -4125,21 +4125,21 @@ static const wifi_operating_classes_t eu_5G[] = {
     { 118, -30, 0, {}           },
     { 119, -30, 0, {}           },
     { 120, -30, 0, {}           },
-    { 121, -30, 0, {}           },
-    { 122, -30, 0, {}           },
-    { 123, -30, 0, {}           },
-    { 125, -30, 1, { 173 }      },
+    { 121, -30, 1, { 144 }           },
+    { 122, -30, 1, { 140 }           },
+    { 123, -30, 1, { 144 }           },
+    { 125, -30, 2, { 173 , 177}      },
     // Revisit Below Operating Class as multiAP.json example indicates nonOperable as
     // [106, 122, 138, 155] and singleAp.json indicates [42,58] but as per Table E-2
     // [138,155] is nonOperable.
-    { 128, -30, 2, { 138, 155 } },
+    { 128, -30, 3, { 138, 155, 171 } },
     // Revisit Below Operating Class as singleAp.json example indicates [50] as nonOperable
     // but as per Table E-2 this channel is operable.
-    { 129, -30, 0, {}           },
+    { 129, -30, 1, { 163 }           },
     // Revisit Below Operating Class as multiAP.json example indicates nonOperable as
     // [106, 122, 138, 155] and singleAp.json indicates [42,58] but as per Table E-2
     // [138,155] is nonOperable.
-    { 130, -30, 2, { 138, 155 } },
+    { 130, -30, 3, { 138, 155, 171 } },
 };
 
 // Countrycode: EU, Band 6G
@@ -4168,20 +4168,20 @@ static const wifi_operating_classes_t jp_5G[] = {
     { 118, -30, 0, {}      },
     { 119, -30, 0, {}      },
     { 120, -30, 0, {}      },
-    { 121, -30, 0, {}      },
-    { 122, -30, 0, {}      },
-    { 123, -30, 0, {}      },
+    { 121, -30, 1, { 144 }      },
+    { 122, -30, 1, { 140 }      },
+    { 123, -30, 1, { 144 }      },
     // Revisit Below Operating Class as multiAP.json example indicates nonOperable as
     // [106, 122, 138, 155] and singleAp.json indicates [42,58] but as per Table E-3
     // only 155 is nonOperable.
-    { 128, -30, 1, { 155 } },
+    { 128, -30, 2, { 155, 171} },
     // Revisit Below Operating Class as singleAp.json example indicates [50] as nonOperable
     // but as per Table E-3 it is operable.
-    { 129, -30, 0, {}      },
+    { 129, -30, 1, { 163 }      },
     // Revisit Below Operating Class as multiAP.json example indicates nonOperable as
     // [106, 122, 138, 155] and singleAp.json indicates [42,58] but as per Table E-3
     // only 155 is nonOperable.
-    { 130, -30, 1, { 155 } },
+    { 130, -30, 2, { 155, 171} },
 };
 
 // Countrycode: JP, Band 6G TBD: Revisit if different from US
@@ -4206,16 +4206,17 @@ static const wifi_operating_classes_t cn_24G[] = {
 static const wifi_operating_classes_t cn_5G[] = {
     { 115, -30, 0, {}                },
     { 116, -30, 0, {}                },
+    { 117, -30, 2, { 40, 48 }        },
     { 118, -30, 0, {}                },
     { 119, -30, 0, {}                },
-    { 125, -30, 2, { 169, 173 }      },
-    { 126, -30, 1, { 165 }           },
+    { 125, -30, 3, { 169, 173, 177 } },
+    { 126, -30, 2, { 165, 173 }           },
     // Revisit below operating class if the nonOperable channels are not appropriate
-    { 128, -30, 3, { 106, 122, 138 } },
+    { 128, -30, 4, { 106, 122, 138, 171 } },
     // Revisit below operating class if the nonOperable channels are not appropriate
-    { 129, -30, 1, { 114 }           },
+    { 129, -30, 2, { 114, 163 }           },
     // Revisit below operating class if the nonOperable channels are not appropriate
-    { 130, -30, 3, { 106, 122, 138 } },
+    { 130, -30, 4, { 106, 122, 138, 171 } },
 };
 
 // Countrycode: CN, Band 6G
